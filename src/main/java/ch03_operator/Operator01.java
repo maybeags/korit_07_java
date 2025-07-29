@@ -72,6 +72,7 @@ public class Operator01 {
 
         int age = 10;
         System.out.println("제 나이는 " + age + "살입니다.");
-        System.out.println("내년에는 " + age + 1 + "살이 됩니다.");
+        System.out.println("내년에는 " + (age + 1) + "살이 됩니다.");
+        // Operator02 생성
     }
 }
