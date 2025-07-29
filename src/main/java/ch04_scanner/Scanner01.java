@@ -66,9 +66,30 @@ public class Scanner01 {
             점수를 입력하세요 >>> 4.5
             이름을 입력하세요 >>> 김일
             김일 학생의 점수는 4.5입니다.
+
+            내일 10시에 기존 수료자 발표회있습니다.
+            2번 문제의 경우 두 가지 정도의 풀이법이 있습니다.
+                1. 배리어를 쓰는 방법
+                2. nextLine()을 쓰지 않는 방법
          */
 
+//        System.out.print("나이를 입력하세요 >>> ");
+//        int age = scanner.nextInt();
+//        System.out.println("저는 올해 " + age + "살입니다.\n내년에는 " + (age + 1) + "살이 됩니다.");
+//        System.out.println("풀이법 # 1 : 배리어를 쓰는 방법");
+//        System.out.print("점수를 입력하세요 >>> ");
+//        double score = scanner.nextDouble();
+//        scanner.nextLine();
+//        System.out.print("이름을 입력하세요 >>> ");
+//        String name = scanner.nextLine();
+//        System.out.println(name + " 학생의 점수는 " + score + "입니다.");
 
+        System.out.println("풀이법 # 2 : nextLine()을 쓰지 않는 방법");
+        System.out.print("점수를 입력하세요 >>> ");
+        double score = scanner.nextDouble();
+        System.out.print("이름을 입력하세요 >>> ");
+        String name = scanner.next();
+        System.out.println(name + " 학생의 점수는 " + score + "입니다.");
 
 
     }
