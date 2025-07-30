@@ -1,4 +1,7 @@
 package ch06_condition;
+
+import java.util.Scanner;
+
 /*
     과제 :
     윤년 계산기 작성
@@ -21,6 +24,36 @@ package ch06_condition;
  */
 public class Condition08 {
     public static void main(String[] args) {
+        // Scanner import / 필요 변수 자료형 및 변수명 선언 / 안내문 / 대입
+        // 이후에 해당 year가 윤년이 맞는지 아닌지를 체크하시면 되겠네요
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("연도를 입력하세요 >>> ");
+        int year = scanner.nextInt();
+        String leapYear = "윤년입니다";
+        // == 좌우가 같다 / a != b : a와 b가 다르다
+        // 실수 사례 -> 지시 사항대로 중첩 if문을 사용하지 않고 작성했을 때 자주하는 방식
+//        if(year % 4 == 0) {
+//
+//        } else if (year % 100 == 0) {
+//            leapYear = "윤년이 아닙니다";
+//        } else if (year % 400  == 0) {
+//
+//        }
+//
+//        System.out.println(year + "년은 " + leapYear);
 
+        // 이상의 경우는 가장 널널한 조건(400으로 나누어 떨어지는 숫자는 당연히 100으로도 나누어 떨어지고
+        // 당연히 4로도 나누어 떨어집니다. 약수니까요)
+
+        if (year % 400 == 0) {}
+        else if (year % 100 == 0) {
+            leapYear = "윤년이 아닙니다";
+        } else if (year % 4 == 0) {}
+        else {
+            leapYear = "윤년이 아닙니다";
+        }
+        System.out.println(year + "년은 " + leapYear);
+
+        // Condition09 -> main // 논리 연산자 이용 풀이
     }
 }
