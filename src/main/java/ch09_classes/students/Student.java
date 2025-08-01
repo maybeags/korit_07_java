@@ -47,4 +47,44 @@ package ch09_classes.students;
 
  */
 public class Student {
+    // 1. 필드 선언
+    int studentCode;
+    String name;
+    double score;
+
+    // 기본 생성자 생성
+    Student() {
+        System.out.println("기본 생성자로 객체가 생성되었습니다.");
+    }
+
+    // 매개변수 생성자 작성
+    Student(int studentCode) {
+        System.out.println("int 매개변수 생성자로 객체를 생성했습니다.");
+        this.studentCode = studentCode;
+    }
+
+    Student(String name) {
+        System.out.println("String 매개변수 생성자로 객체를 생성했습니다.");
+        this.name = name;
+    }
+
+    Student(int studentCode, String name) {
+        System.out.println("int, String 매개변수 생성자로 객체를 생성했습니다.");
+        this.studentCode = studentCode;
+        this.name = name;
+    }
+
+    Student(int studentCode, String name, double score) {
+        System.out.println("int, String, double 매개변수 생성자로 객체를 생성했습니다.");
+        this.studentCode = studentCode;
+        this.name = name;
+        this.score = score;
+    }
+
+    // showInfo()
+    void showInfo() {
+        System.out.println("\n학번 : " + studentCode);
+        System.out.println("이름 : " + name);
+        System.out.println("점수 : " + score);
+    }
 }
