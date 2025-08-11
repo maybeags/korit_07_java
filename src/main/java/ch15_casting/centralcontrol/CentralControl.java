@@ -2,7 +2,7 @@ package ch15_casting.centralcontrol;
 
 public class CentralControl {
     // 필드 선언
-    public Power[] deviceArray;
+    private Power[] deviceArray;
 
     public CentralControl(Power[] deviceArray) {
         this.deviceArray = deviceArray;
@@ -25,7 +25,14 @@ public class CentralControl {
         }
         deviceArray[emptyIndex] = device;       // private으로 적용해놔서 method를 경유했습니다.
         // public이면 main에서 그냥 바로 위의 코드를 집어넣으면 되겠죠.
-        System.out.println("장치가 연결되었습니다.");
+        System.out.println(device.getClass().getSimpleName() + " 장치가 연결되었습니다.");
+        /*
+            .getClass() -> 클래스명을 return하는 method + 패키지 경로 포함
+            .getClass().getSimpleName() -> 클래스명만 출력됨.
+            현재 보시면 method의 결과값을 가지고 다시 . 찍어서 그 다음 method를 호출했습니다.
+            이상의 개념을 chaining method라고 해서 return값의 유형을 명확하게 알고 있어야
+            그 다음 어떤 method를 실행시킬 것인지를 알 수 있습니다.
+         */
     }
 
     private int checkEmpty() {  // 메서드인데 private 썼습니다. Main에서 굳이
@@ -45,6 +52,35 @@ public class CentralControl {
             음수값을 지정하는 경우도 있는데,
             나중에 위에 있는 addDevice() 메서드에서 if(checkEmpty() == -89234)로 쓰고 싶지 않으면
             -1 쓰는게 가장 보편적입니다.
+         */
+    }
+
+
+    public void powerOn() {
+        /*
+            해당 클래스의 필드인 Power[] 배열 내에 있는 객체들은 기본적으로
+            Power의 서브 클래스의 객체들입니다.
+            즉, on() / off() method를 공통적으로 지니고 있습니다.
+            그리고 Power 자료형으로 업캐스팅도 되어있습니다.
+         */
+        for ( int i = 0 ; i < deviceArray.length ; i++ ) {
+            if( deviceArray[i] == null ) {
+                System.out.println("장치가 없어 전원을 켜지 않았습니다.");
+                continue;   // break;는 반복문을 즉시 종료하고, return;은 method를
+                // 즉시 종료하는데, continue;의 경우에는
+                // 현재 반복만 종료하고 그 다음 반복문으로 넘어갑니다.
+                // 즉 deviceArray[3] 주소지에 객체가 없어 null이 있다면
+                // 67번 라인의 조건문이 실행될텐데
+                // "장치가 없어 전원을 켜지않았습니다."가 출력되고
+                // 곧장 deviceArray[4]를 확인하게 됩니다.
+            }
+            deviceArray[i].on();
+        }
+
+        /*
+            powerOff() 메서드를 정의하고, Main에서 호출하시오.
+            단, 배열 내부를 탐색하는 반복문을 작성할 때
+            향상된 for문을 사용하시오.
          */
     }
 }
