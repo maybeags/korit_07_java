@@ -55,3 +55,6 @@ public class TeacherMain {
         // ch16_objects.teacher.Teacher가 아닙니다.
     }
 }
+/*
+    ch17_bean 패키지 생성 -> UserEntity / UserEntityMain
+ */
