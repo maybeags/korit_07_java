@@ -34,11 +34,38 @@ public class CentralControlMain {
          */
         Mouse mouse1 = new Mouse();
         LED led1 = new LED();
+        Printer printer1 = new Printer();
         centralControl.addDevice(mouse1);
         centralControl.addDevice(led1);
+        centralControl.addDevice(printer1);
 
         centralControl.powerOn();
+        centralControl.powerOff();
 
+        System.out.println("----------continue----------");
+        for (int i = 0 ; i < 10 ; i++) {
+            System.out.println(i+1);
+        }
+
+//        for (int i = 0 ; i < 10 ; i++) {
+//            if((i+1) % 2 != 1) {
+//                System.out.println(i);
+//            }
+//        }
+//        System.out.println("---");
+//        for (int i = 0 ; i < 10 ; i++) {
+//            if((i+1) % 2 == 1) {
+//                continue;                 // continue : 해당 반복을 종료하고 다음 반복을 실행
+//            }
+//            System.out.println(i);
+//        }
+        centralControl.showInfo();
+
+        speaker1.changeEqual();
+
+        centralControl.performSpecificMethod();
 
     }
 }
+
+//ch16_objects
