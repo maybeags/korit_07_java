@@ -25,7 +25,7 @@ import java.util.*;
 public class Meeting {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Set<String> attendees = new HashSet<>();
+        Set<String> attendees = new HashSet<>();        // pl. attendance
         List<String> meetingList = new ArrayList<>();
         boolean endOfName = false;
         boolean continuing = true;
