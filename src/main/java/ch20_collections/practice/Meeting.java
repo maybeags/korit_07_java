@@ -27,12 +27,32 @@ public class Meeting {
         Scanner scanner = new Scanner(System.in);
         Set<String> attendees = new HashSet<>();
         List<String> meetingList = new ArrayList<>();
+        boolean endOfName = false;
+        boolean continuing = true;
         System.out.println("--- 모임 참석자 명단 관리 ---");
         System.out.println("[ 종료 ]를 입력하면 프로그램을 종료합니다.");
         // 여기서부터 횟수가 정해지지 않은 반복문을 작성해야 합니다.
-        while(true) {
-
+        while(continuing) {
+            System.out.print("참석자 이름을 입력하세요 >>> ");
+            String name = scanner.nextLine();
+            // name 변수의 데이터가 attendees에 추가되어야 함. -> .add();
+            // 그럼 Set에 추가하기 전에 확인하는게 좋겠네요.
+            if(name.equals("종료")) { // String이기 때문에 == 이 아닙니다.
+                System.out.println("프로그램이 종료되었습니다.");
+                break;
+            }
+            attendees.add(name);
         }
-
+        System.out.println("\n--- 최종 참석자 명단 ---");
+        // 이제 set을 list로 바꾸어야 합니다.
+        meetingList.addAll(attendees);
+        // 그리고 내부의 element들을 쉼표를 포함해서 출력해야 합니다.
+        for (int i = 0 ; i < meetingList.size() ; i++) {
+            if(i == meetingList.size() - 1) {   //meetingList.size() - 1 는 list의 마지막 index 넘버
+                System.out.print(meetingList.get(i));
+                break;
+            }
+            System.out.print(meetingList.get(i) + ", ");
+        }
     }
 }
