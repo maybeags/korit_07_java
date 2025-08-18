@@ -14,7 +14,7 @@ public class Main {
         dog1.makeSound();
         dog1.fetch();
         animal1.makeSound();        // 결과값 : 개가 짖습니다. 즉 재정의된 method가 호출됨.
-        //animal1.fetch();        // 이게 불가능
+//        animal1.fetch();        // 이게 불가능
 
         Animal animal2 = new Dog();     // 이게 제가 말하는 A a = new B(); 형태입니다. 시험에 자주 나옴
 
@@ -87,22 +87,22 @@ public class Main {
         // 그렇다면 현재 코드라인 상에서 빨간줄 뜨지도 않으니까 잘못 다운캐스팅이 이루어지는지에 대한
         // 확인이 불가능한 상황인데, 이를 해결하기 위한 것이 instanceof 연산자입니다.
 
-        System.out.println("animal4 검증 파트");
-        if(animal4 instanceof Dog) {        // 이 조건식이 true라면 animal4의 생성시 호출된 생성자는 Dog();
-            Dog dog4 = (Dog) animal4;       // 그러므로 92번 라인의 실행문을 통해 다운캐스팅을 하더라도 오류 발생 x
-
-            dog4.makeSound();
-            dog4.fetch();
-        }
-        System.out.println("animal3는 다운캐스팅 안되는거 알았으니까 검증 후에 다운캐스팅 시도해야겠네요");
-        if(animal3 instanceof Dog) {
-            Dog dog3 = (Dog) animal3;
-
-            dog3.makeSound();
-            dog3.fetch();
-        } else {
-            System.out.println("불가능한 다운캐스팅입니다.");
-        }
+//        System.out.println("animal4 검증 파트");
+//        if(animal4 instanceof Dog) {        // 이 조건식이 true라면 animal4의 생성시 호출된 생성자는 Dog();
+//            Dog dog4 = (Dog) animal4;       // 그러므로 92번 라인의 실행문을 통해 다운캐스팅을 하더라도 오류 발생 x
+//
+//            dog4.makeSound();
+//            dog4.fetch();
+//        }
+//        System.out.println("animal3는 다운캐스팅 안되는거 알았으니까 검증 후에 다운캐스팅 시도해야겠네요");
+//        if(animal3 instanceof Dog) {
+//            Dog dog3 = (Dog) animal3;
+//
+//            dog3.makeSound();
+//            dog3.fetch();
+//        } else {
+//            System.out.println("불가능한 다운캐스팅입니다.");
+//        }
 
 
     // ch15_casting의 하위에 centralcontrol
